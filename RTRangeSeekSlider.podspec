@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.screenshots           = 'http://i.giphy.com/xUA7b21tlFYPzwFvTq.gif'
   s.license               = { type: 'MIT', file: 'LICENSE' }
   s.author                = { WorldDownTown: 'WorldDownTown@gmail.com' }
-  s.source                = { git: 'https://github.com/WorldDownTown/RangeSeekSlider.git', tag: s.version.to_s }
+  s.source                = { git: 'https://github.com/RakutenTravelNative/RangeSeekSlider.git', tag: s.version.to_s }
   s.social_media_url      = 'https://twitter.com/WorldDownTown'
   s.ios.deployment_target = '9.0'
   s.source_files          = 'Sources/*.swift'
