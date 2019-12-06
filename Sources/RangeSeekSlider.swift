@@ -52,16 +52,18 @@ import UIKit
     /// (note: This should be less than the selectedMaxValue)
     @IBInspectable open var selectedMinValue: CGFloat = 0.0 {
         didSet {
+            refresh()
             if selectedMinValue < minValue {
                 selectedMinValue = minValue
             }
         }
     }
-
+    
     /// The preselected maximum value
     /// (note: This should be greater than the selectedMinValue)
     @IBInspectable open var selectedMaxValue: CGFloat = 100.0 {
         didSet {
+            refresh()
             if selectedMaxValue > maxValue {
                 selectedMaxValue = maxValue
             }
