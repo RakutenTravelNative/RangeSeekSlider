@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name                  = 'RangeSeekSlider'
+  s.name                  = 'RTRangeSeekSlider'
   s.version               = '1.8.0'
   s.summary               = 'RangeSeekSlider provides a customizable range slider like a UISlider.'
   s.description           = <<-DESC
