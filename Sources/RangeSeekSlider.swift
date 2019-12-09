@@ -52,12 +52,6 @@ import UIKit
     /// (note: This should be less than the selectedMaxValue)
     @IBInspectable open var selectedMinValue: CGFloat = 0.0 {
         didSet {
-            if selectedMinValue < minValue {
-                selectedMinValue = minValue
-            }
-            if selectedMinValue > selectedMaxValue {
-                selectedMinValue = selectedMaxValue
-            }
             refresh()
         }
     }
@@ -66,12 +60,6 @@ import UIKit
     /// (note: This should be greater than the selectedMinValue)
     @IBInspectable open var selectedMaxValue: CGFloat = 100.0 {
         didSet {
-            if selectedMaxValue > maxValue {
-                selectedMaxValue = maxValue
-            }
-            if selectedMaxValue < selectedMinValue {
-                selectedMaxValue = selectedMinValue
-            }
             refresh()
         }
     }
@@ -668,8 +656,14 @@ import UIKit
         if selectedMinValue < minValue {
             selectedMinValue = minValue
         }
+        if selectedMinValue > selectedMaxValue {
+            selectedMinValue = selectedMaxValue
+        }
         if selectedMaxValue > maxValue {
             selectedMaxValue = maxValue
+        }
+        if selectedMaxValue < selectedMinValue {
+            selectedMaxValue = selectedMinValue
         }
 
         // update the frames in a transaction so that the tracking doesn't continue until the frame has moved.
