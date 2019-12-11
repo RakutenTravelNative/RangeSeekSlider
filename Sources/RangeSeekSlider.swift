@@ -669,12 +669,10 @@ import UIKit
         // update the frames in a transaction so that the tracking doesn't continue until the frame has moved.
         CATransaction.begin()
         CATransaction.setDisableActions(true)
-        if selectedMinValue <= selectedMaxValue && selectedMinValue >= minValue && selectedMaxValue >= selectedMinValue && selectedMaxValue <= maxValue {
-            updateHandlePositions()
-            updateLabelPositions()
-        }
+        updateHandlePositions()
+        updateLabelPositions()
         CATransaction.commit()
-
+        
         updateLabelValues()
         updateColors()
         updateAccessibilityElements()
